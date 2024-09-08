@@ -8,7 +8,23 @@
 
     <link rel="stylesheet" type="text/css" href="static/css/style.css"/>
  
- 
+ <!-- Event snippet for aaaclick conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-16693404152/1_xcCMGC8NAZEPjDhJg-',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
 
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
